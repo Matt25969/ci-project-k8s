@@ -16,5 +16,6 @@ spec:
                 spec:
                         containers:
                                 - image: docker.io/wrusselly/authentication-client
+                                  name: authentication-client
                                   ports:
                                           - containerPort: 8080

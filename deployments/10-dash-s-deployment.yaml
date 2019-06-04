@@ -16,5 +16,6 @@ spec:
                 spec:
                         containers:
                                 - image: docker.io/wrusselly/dashboard-service
+                                  name: dashboard-service
                                   ports:
                                           - containerPort: 3000

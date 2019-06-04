@@ -16,5 +16,6 @@ spec:
                 spec:
                         containers:
                                 - image: docker.io/wrusselly/role-service
+                                  name: role-service
                                   ports:
                                           - containerPort: 3000

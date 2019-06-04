@@ -16,5 +16,6 @@ spec:
                 spec:
                         containers:
                                 - image: docker.io/wrusselly/session-token-service
+                                  name: session-token-service
                                   ports:
                                           - containerPort: 3000

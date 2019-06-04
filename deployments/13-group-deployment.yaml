@@ -16,5 +16,6 @@ spec:
                 spec:
                         containers:
                                 - image: docker.io/wrusselly/group-service
+                                  name: group-service
                                   ports:
                                           - containerPort: 3000

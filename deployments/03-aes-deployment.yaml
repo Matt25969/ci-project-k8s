@@ -16,5 +16,6 @@ spec:
                 spec:
                         containers:
                                 - image: docker.io/wrusselly/aes-encryption-service
+                                  name: aes-encryption-service
                                   ports:
                                           - containerPort: 3000

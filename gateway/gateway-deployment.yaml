@@ -16,5 +16,6 @@ spec:
                 spec:
                         containers:
                                 - image: docker.io/wrusselly/gateway
+                                  name: gateway
                                   ports:
                                           - containerPort: 80

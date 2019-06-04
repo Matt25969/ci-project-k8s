@@ -16,5 +16,6 @@ spec:
                 spec:
                         containers:
                                 - image: docker.io/wrusselly/dashboard-client
+                                  name: dashboard-client
                                   ports:
                                           - containerPort: 8080

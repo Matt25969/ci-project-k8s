@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins
+  labels:
+    app: jenkins
+spec:
+  selector:
+    matchLabels:
+      app: jenkins
+  template:
+    metadata:
+      labels:
+        app: jenkins
+    spec:
+      serviceAccountName: jenkins-service-account
+      securityContext:
+        fsGroup: 1000
+      containers:
+      - name: jenkins
+        securityContext:
+          runAsUser: 1000
+        image: wrusselly/jenkins:gcp
+        ports:
+        - name: http-port
+          containerPort: 8080
+        volumeMounts:
+        - name: jenkins-home
+          mountPath: /var/jenkins_home
+        - name: docker-socket
+          mountPath: /var/run/docker.sock
+      volumes:
+        - name: jenkins-home
+          persistentVolumeClaim:
+                  claimName: jenkins-home
+        - name: docker-socket
+          hostPath:
+            path: /var/run/docker.sock
+            type: File

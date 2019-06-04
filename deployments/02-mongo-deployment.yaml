@@ -16,5 +16,6 @@ spec:
                 spec:
                         containers:
                                 - image: docker.io/wrusselly/mongo-service
+                                  name: mongo-service
                                   ports:
                                           - containerPort: 3000

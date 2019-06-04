@@ -16,8 +16,9 @@ spec:
                 spec:
                         containers:
                                 - image: docker.io/wrusselly/authentication-service
+                                  name: authentication-service
                                   ports:
                                           - containerPort: 3000
                                   env:
                                           - name: ACTIVATION_LINK
-                                            value: http://${LB_IP}/authentication/api/activate        
+                                            value: http://34.90.184.123/authentication/api/activate        
