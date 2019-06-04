@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: email-service
+        labels:
+                app: email-service 
+spec:
+        replicas: 1
+        selector:
+                matchLabels:
+                        app: email-service
+        template:
+                metadata:
+                        labels:
+                                app: email-service
+                spec:
+                        containers:
+                                - image: docker.io/wrusselly/email-service
+                                  ports:
+                                          - containerPort: 3000
+                                  env:
+                                          - name: GMAIL_USER
+                                            value: ilovedocker123@gmail.com
+                                          - name: GMAIL_PASS
+                                            value: ilovedocker1!
+                                          - name: SERVICE_NAME
+                                            value: "Wills CI Project"

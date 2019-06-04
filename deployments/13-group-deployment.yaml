@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: group-service
+        labels:
+                app: group-service 
+spec:
+        replicas: 1
+        selector:
+                matchLabels:
+                        app: group-service
+        template:
+                metadata:
+                        labels:
+                                app: group-service
+                spec:
+                        containers:
+                                - image: docker.io/wrusselly/group-service
+                                  ports:
+                                          - containerPort: 3000

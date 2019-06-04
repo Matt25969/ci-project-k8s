@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+        name: aes-encryption-service
+spec:
+        selector:
+                app: aes-encryption-service
+        ports:
+                - protocol: TCP
+                  port: 3000
+                  targetPort: 3000
+        type: ClusterIP

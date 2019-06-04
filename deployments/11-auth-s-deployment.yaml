@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: authentication-service
+        labels:
+                app: authentication-service 
+spec:
+        replicas: 1
+        selector:
+                matchLabels:
+                        app: authentication-service
+        template:
+                metadata:
+                        labels:
+                                app: authentication-service
+                spec:
+                        containers:
+                                - image: docker.io/wrusselly/authentication-service
+                                  ports:
+                                          - containerPort: 3000

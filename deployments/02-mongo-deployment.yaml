@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: mongo-service
+        labels:
+                app: mongo-service 
+spec:
+        replicas: 1
+        selector:
+                matchLabels:
+                        app: mongo-service
+        template:
+                metadata:
+                        labels:
+                                app: mongo-service
+                spec:
+                        containers:
+                                - image: docker.io/wrusselly/mongo-service
+                                  ports:
+                                          - containerPort: 3000

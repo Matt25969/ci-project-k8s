@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: authentication-client
+        labels:
+                app: authentication-client 
+spec:
+        replicas: 1
+        selector:
+                matchLabels:
+                        app: authentication-client
+        template:
+                metadata:
+                        labels:
+                                app: authentication-client
+                spec:
+                        containers:
+                                - image: docker.io/wrusselly/authentication-client
+                                  ports:
+                                          - containerPort: 8080

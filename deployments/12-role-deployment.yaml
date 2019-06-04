@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: role-service
+        labels:
+                app: role-service 
+spec:
+        replicas: 1
+        selector:
+                matchLabels:
+                        app: role-service
+        template:
+                metadata:
+                        labels:
+                                app: role-service
+                spec:
+                        containers:
+                                - image: docker.io/wrusselly/role-service
+                                  ports:
+                                          - containerPort: 3000

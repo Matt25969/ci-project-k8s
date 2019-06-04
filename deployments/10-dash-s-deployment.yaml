@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: dashboard-service
+        labels:
+                app: dashboard-service 
+spec:
+        replicas: 1
+        selector:
+                matchLabels:
+                        app: dashboard-service
+        template:
+                metadata:
+                        labels:
+                                app: dashboard-service
+                spec:
+                        containers:
+                                - image: docker.io/wrusselly/dashboard-service
+                                  ports:
+                                          - containerPort: 3000

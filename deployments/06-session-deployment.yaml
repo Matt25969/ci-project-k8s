@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: session-token-service
+        labels:
+                app: session-token-service 
+spec:
+        replicas: 1
+        selector:
+                matchLabels:
+                        app: session-token-service
+        template:
+                metadata:
+                        labels:
+                                app: session-token-service
+                spec:
+                        containers:
+                                - image: docker.io/wrusselly/session-token-service
+                                  ports:
+                                          - containerPort: 3000
