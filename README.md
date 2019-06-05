@@ -37,7 +37,7 @@ Above is the architecture map for this project. Each component depends on any do
 
 **2.** Create a job to:
     
-   a. rebuild and push images. Using the previous project (mentioned above as the source code).
+   a. rebuild and push images using the previous project as the source code.
       
       docker-compose up –d 
       docker-compose push
