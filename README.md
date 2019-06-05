@@ -35,9 +35,42 @@ Above is the architecture map for this project. Each component depends on any do
 ### Jenkins 
 **1.** Deploy jenkins by running the jenkins folder `kubectl apply -f jenkins/`
 
-side note: may need to add extra nodes if cluster does not have enough CPUs. Add extra nodes with this command:
-    gcloud container clusters resize <cluster-name> --node-pool <default-pool> --num-nodes <number-of-nodes> --region <cluster-region>
-
 **2.** Create a job to:
-    1. rebuild and push images 
-    2. update cluster deployments
+    
+   a. rebuild and push images. Using the previous project (mentioned above as the source code).
+      ```
+      docker-compose up –d 
+      docker-compose push
+      ```
+    
+   b. update cluster deployments using the following command for each component: 
+      
+      `kubectl --record deployment.apps/<deployment-name> set image deployment.v1.apps/<deployment-name> <image-name-name>=docker.io/wrusselly/<image-name>:${BUILD_NUMBER}`
+  
+  `BUILD_NUMBER` is a jenkins environment variable used to tag each new image. 
+  
+### Common Problems
+# Jenkins pod won't start
+may have insufficient CPUs
+
+Solution:
+* Add extra nodes with this command:
+  `gcloud container clusters resize <cluster-name> --node-pool <default-pool> --num-nodes <number-of-nodes> --region <cluster-region>`
+  
+# Jenkins can't connect to docker daemon. 
+  
+Solution:
+* Find the container ID and the Node its on `Kubectl describe pod <jenkins-pod>`
+* SSH onto the node and connect to the jenkins container as the root user `docker exec -it -u root <container-id> bash`
+* Find the group id for docker `ls -al /var/run/docker.sock`
+* Delete the docker group `groupdel docker`
+* Remake the group with the id `groupadd -g <id> docker`
+* Add jenkins user to docker group `usermod -aG docker jenkins`
+* exit and restart the container `docker restart <container-id>`
+  
+# Jenkins 403 crumb error 
+  
+Solution: 
+* On the jenkins home page click manage jenkins
+* click configure global security
+* Under CSRF Protection tick "enable proxy compatability"
