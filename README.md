@@ -49,15 +49,15 @@ Above is the architecture map for this project. Each component depends on any do
   
   `BUILD_NUMBER` is a jenkins environment variable used to tag each new image. 
   
-### Common Problems
-#### Jenkins pod won't start
+## Common Problems
+### Jenkins pod won't start
 may have insufficient CPUs
 
 Solution:
 * Add extra nodes with this command:
   `gcloud container clusters resize <cluster-name> --node-pool <default-pool> --num-nodes <number-of-nodes> --region <cluster-region>`
   
-#### Jenkins can't connect to docker daemon. 
+### Jenkins can't connect to docker daemon. 
   
 Solution:
 * Find the container ID and the Node its on `Kubectl describe pod <jenkins-pod>`
@@ -68,7 +68,7 @@ Solution:
 * Add jenkins user to docker group `usermod -aG docker jenkins`
 * exit and restart the container `docker restart <container-id>`
   
-#### Jenkins 403 crumb error 
+### Jenkins 403 crumb error 
   
 Solution: 
 * On the jenkins home page click manage jenkins
