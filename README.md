@@ -1,4 +1,4 @@
-# ci-project
+# CI-Project
 
 ## Components 
 This project builds on a previous project (https://github.com/wrusselly/ci-project/tree/jenkins) to set up a continuous integration pipeline for an application that provides secure login functionality. This will be done using kubernetes, jenkins and docker-compose. The app consists of 14 components: 
