@@ -33,5 +33,11 @@ Above is the architecture map for this project. Each component depends on any do
 **5.** Run the services folder using: `kubectl apply -f deployments/`, and the gateway service `kubectl apply -f gateway/gateway-deployment.yaml`. You can now connect to the page by going to the load balancer ip followed by `/authentication/login`
 
 ### Jenkins 
-**1.** Deploy jenkins (check resources)
-**2.** Create a job to a) rebuild and push images b) update cluster deployments
+**1.** Deploy jenkins by running the jenkins folder `kubectl apply -f jenkins/`
+
+side note: may need to add extra nodes if cluster does not have enough CPUs. Add extra nodes with this command:
+    gcloud container clusters resize <cluster-name> --node-pool <default-pool> --num-nodes <number-of-nodes> --region <cluster-region>
+
+**2.** Create a job to:
+    1. rebuild and push images 
+    2. update cluster deployments
