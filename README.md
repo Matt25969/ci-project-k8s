@@ -1,7 +1,7 @@
 # ci-project
 
 ## Components 
-The goal of this project is build on a previous project to set up a continuous integration pipeline for an application that provides secure login functionality. This will be done using kubernetes, jenkins and docker-compose(previous project: https://github.com/wrusselly/ci-project/tree/jenkins). The app consists of 14 components: 
+The goal of this project is build on a previous project (https://github.com/wrusselly/ci-project/tree/jenkins) to set up a continuous integration pipeline for an application that provides secure login functionality. This will be done using kubernetes, jenkins and docker-compose. The app consists of 14 components: 
 *	1 gateway: this uses nginx to route traffic to the other components.
 *	2 Clients: these are the webpages written with VueJS.
 *	10 Services: these are the APIs for the app written in nodeJS. 
