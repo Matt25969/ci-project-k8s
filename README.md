@@ -39,10 +39,8 @@ Above is the architecture map for this project. Each component depends on any do
     
    a. rebuild and push images. Using the previous project (mentioned above as the source code).
       
-      ```
-      docker-compose up –d 
-      docker-compose push
-      ```
+      `docker-compose up –d 
+      docker-compose push`
     
    b. update cluster deployments using the following command for each component: 
       
