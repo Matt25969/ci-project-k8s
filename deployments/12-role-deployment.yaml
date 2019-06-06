@@ -15,7 +15,7 @@ spec:
                                 app: role-service
                 spec:
                         containers:
-                                - image: docker.io/wrusselly/role-service
+                                - image: docker.io/${DOCKER_USER}/role-service
                                   name: role-service
                                   ports:
                                           - containerPort: 3000
