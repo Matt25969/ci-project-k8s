@@ -42,7 +42,9 @@ Above is the CI pipeline used for this project.
 
 **2.** Go onto the Jenkins pod and run `docker login` to give jenkins access to your dockerhub. 
 
-n.b. All references to docker images in the yaml files will need to be changed to your dockerhub username
+n.b. All references to docker images in the deployment yaml files will need to be changed to your dockerhub username. Using the dockerhub branch for this project (and the jenkins branch for the previous project), this can be done using and environment variable 
+
+    export DOCKER_USER=<dockerhub-username>
 
 **3.** Create a job to:
     
