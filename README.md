@@ -29,7 +29,7 @@ Above is the CI pipeline used for this project.
     gcloud container clusters create <cluster-name> --region <region>
     glcoud container clusters get-credentials <cluster-name> --region <region>
   
-**2.** Clone the yaml files for the services (https://github.com/wrusselly/ci-project-k8s.git). These files have been split into a deployments and services folder with a a file in each for every component. The gateway has been kept seperate to be deployed last as it depends on multiple other components. 
+**2.** Clone the yaml files for the components (https://github.com/wrusselly/ci-project-k8s.git). These files have been split into a deployments and services folder with a a file in each for every component. The gateway has been kept seperate to be deployed last as it depends on multiple other components. 
 
 **3.** Run the services folder using: `kubectl apply -f services/`, and the gateway service `kubectl apply -f gateway/gateway-service.yaml`.
 
