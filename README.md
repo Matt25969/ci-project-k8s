@@ -40,7 +40,11 @@ Above is the CI pipeline used for this project.
 ### Jenkins 
 **1.** Deploy jenkins by running the jenkins folder `kubectl apply -f jenkins/`
 
-**2.** Create a job to:
+**2.** Go onto the Jenkins pod and run `docker login` to give jenkins access to your dockerhub. 
+
+n.b. All references to docker images in the yaml files will need to be changed to your dockerhub username
+
+**3.** Create a job to:
     
    a. rebuild and push images using the previous project as the source code.
       
