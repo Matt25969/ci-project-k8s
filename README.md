@@ -8,7 +8,7 @@ This project builds on a previous project (https://github.com/wrusselly/ci-proje
 *	1 Database: this app uses mongo as its database.
 
 ## Architecture
-![Architecture map](https://github.com/wrusselly/ci-project/blob/master/CI-project.png)
+![Architecture map]()
 
 Above is the architecture map for this project. Each component depends on any downstream components(e.g. email-service depends on mongo-service), so when building it must be done from the bottom up. Currently the role and group service are not connected to the rest of the application. All requests from the user pass through the gateway which then routes them to the appropriate place. 
 
