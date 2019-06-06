@@ -15,7 +15,7 @@ spec:
                                 app: email-service
                 spec:
                         containers:
-                                - image: docker.io/wrusselly/email-service
+                                - image: docker.io/${DOCKER_USER}/email-service
                                   name: email-service
                                   ports:
                                           - containerPort: 3000
