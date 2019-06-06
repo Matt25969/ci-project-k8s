@@ -55,7 +55,7 @@ Above is the CI pipeline used for this project.
     
    b. update cluster deployments using the following command for each component: 
       
-      `kubectl --record deployment.apps/<deployment-name> set image deployment.v1.apps/<deployment-name> <image-name-name>=docker.io/wrusselly/<image-name>:${BUILD_NUMBER}`
+      kubectl --record deployment.apps/<deployment-name> set image deployment.v1.apps/<deployment-name> <image-name-name>=docker.io/wrusselly/<image-name>:${BUILD_NUMBER}
   
   `BUILD_NUMBER` is a jenkins environment variable used to tag each new image. 
   
