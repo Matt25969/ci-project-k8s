@@ -15,7 +15,7 @@ spec:
                                 app: account-service
                 spec:
                         containers:
-                                - image: docker.io/wrusselly/account-service
+                                - image: docker.io/${DOCKER_USER}/account-service
                                   name: account-service
                                   ports:
                                           - containerPort: 3000
