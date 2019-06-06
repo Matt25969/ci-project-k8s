@@ -15,7 +15,7 @@ spec:
                                 app: authentication-service
                 spec:
                         containers:
-                                - image: docker.io/wrusselly/authentication-service
+                                - image: docker.io/${DOCKER_USER}/authentication-service
                                   name: authentication-service
                                   ports:
                                           - containerPort: 3000
