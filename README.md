@@ -25,6 +25,7 @@ Above is the CI pipeline used for this project.
 
 ### Kubernetes 
 **1.** Set up a cluster in the GCP cloud shell. 
+    
     `gcloud container clusters create <cluster-name> --region <region>
     glcoud container clusters get-credentials <cluster-name> --region <region>`
   
